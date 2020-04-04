@@ -21,13 +21,9 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true
-    },
     "android": {
-      "package": "com.KERO.KERO",
-      "permissions": [],
-      "versionCode": 1
-    }
+      "package": "com.KERO.KERO"
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js"
   }
 }
