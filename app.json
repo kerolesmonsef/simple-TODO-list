@@ -24,6 +24,10 @@
     "android": {
       "package": "com.KERO.KERO"
     },
-    "entryPoint": "node_modules/expo/AppEntry.js"
+    "entryPoint": "node_modules/expo/AppEntry.js",
+    "ios": {
+      "bundleIdentifier": "yes"
+    },
+    "description": ""
   }
 }
