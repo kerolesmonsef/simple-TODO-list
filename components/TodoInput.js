@@ -8,28 +8,58 @@ const TodoInput = props => {
         setTodoText(newText);
     }
 
+    let CloseAddTodoMode = () => {
+        setTodoText("");
+        props.ChangeAddMode(false)
+    }
+
+    let AddNewTodo = () => {
+        props.OnAddNewTODO(enterTodoText)
+    }
+
     return (
-        // <Modal visible={true}>
-        <View style={styles.input_view}>
-            <TextInput placeholder="Enter Todo ..." onChangeText={onChangeTodoTextInput}
-                       style={styles.text_input_todo} value={enterTodoText}/>
-            <View style={{paddingTop: 5}}>
-                <Button title={} onPress={() => {
-                    props.OnAddNewTODO(enterTodoText)
-                }}/>
-                <Button
-            </View>
+        <View style={styles.centeredView}>
+            <Modal visible={props.visable} animationType="slide">
+                <View style={styles.input_view}>
+                    <Text style={{marginBottom: 50, color: "red"}}>Add New Todo</Text>
+                    <TextInput placeholder="Enter Todo ..." onChangeText={onChangeTodoTextInput}
+                               style={styles.text_input_todo} value={enterTodoText}/>
+                    <View style={styles.buttons}>
+                        <View style={styles.button}>
+                            <Button color="red" title="Cancel" onPress={() => CloseAddTodoMode()}/>
+                        </View>
+                        <View style={styles.button}>
+                            <Button title="ADD" onPress={AddNewTodo}/>
+                        </View>
+                    </View>
+                </View>
+            </Modal>
         </View>
-        // </Modal>
     )
 }
 
 
 const styles = StyleSheet.create({
+    centeredView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22
+    },
     input_view: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        // alignItems: "center",
+        margin: 20,
+        backgroundColor: "white",
+        borderRadius: 20,
+        padding: 35,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5
     },
     text_input_todo: {
         width: '80%',
@@ -38,7 +68,18 @@ const styles = StyleSheet.create({
         borderColor: "#ced4da",
         borderStyle: "solid",
         padding: 10,
+        borderRadius: 5,
     },
+
+    buttons: {
+        marginTop: 5,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        width: "60%",
+    },
+    button: {
+        width: "46%"
+    }
 });
 
 export default TodoInput;

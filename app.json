@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "KERO",
-    "slug": "KERO",
+    "name": "TODO",
+    "slug": "TODO",
     "platforms": [
       "ios",
       "android",
@@ -22,7 +22,7 @@
       "**/*"
     ],
     "android": {
-      "package": "com.KERO.KERO"
+      "package": "com.TODO.TODO"
     },
     "entryPoint": "node_modules/expo/AppEntry.js",
     "ios": {
